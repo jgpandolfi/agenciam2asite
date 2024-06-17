@@ -1,0 +1,407 @@
+/* Declarando variáveis */
+:root {
+    --cor-primaria: #f1f1f1; /* Branco gelo */
+    --cor-secundaria: #690D34; /* Vinho mais claro */
+    --cor-terciaria: #4A002C; /* Vinho mais escuro */
+    --cor-quartenaria: #333; /* Cinza */
+    --cor-borda: rgb(255, 255, 255, 0.5) /* Branco mais leve para as bordas */
+}
+
+/* School suave da página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos globais */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--cor-primaria);
+    animation: slide-out 0.4s;
+}
+  
+header, main, footer {
+    padding: 20px;
+}
+
+main {
+    background-color: var(--cor-secundaria);
+    background-image: url("/assets/background.webp");
+    background-size: cover; /* Para cobrir toda a área da div */
+    background-position: center; /* Para centralizar a imagem na div */
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* Adicione um margin-top para a primeira seção para que ela comece abaixo do cabeçalho */
+main > section:first-child {
+    margin-top: 80px; /* Ajuste conforme a altura do cabeçalho */
+}
+
+/* Estilos do botão flutuante do WhatsApp */
+.btnWhatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        transition: transform 0.3s ease-in-out;
+    }
+    img:hover {
+        transform: scale(1.2);
+    }
+}
+
+/* Estilos específicos para todo o header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Um valor alto para garantir que o cabeçalho fique acima de outros elementos */
+    display: flex;
+    justify-content: space-between;
+    align-items: outset;
+    padding: 4px 0px;
+    background-color: rgb(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-bottom: 1px ridge rgb(255, 255, 255, 0.2);
+    div {
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+        a picture {
+            img {
+            width: 100px;
+            }
+            img:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/* Estilos específicos da navbar */
+nav {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 0px 0px;
+    ul {
+        display: flex;
+        list-style: none;
+        li {
+            margin: 0px 6px;
+            padding: 0px 6px;
+            a {
+                color: var(--cor-primaria);
+                text-decoration: none;
+            }
+            a:hover {
+                font-weight: 700;
+                transform: scale(1.4);
+                padding: 4px 4px;
+            }
+        }
+    }
+    label {
+        cursor: pointer;
+    }
+    label:hover {
+        transform: scale(1.1);
+    }
+}
+
+#menuToggle {
+    display: none;
+}
+
+.menuIcon {
+    padding-left: 10px;
+    padding-right: 16px;
+    font-size: 20px;
+}
+
+/* Estilos do conteúdo geral */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+        text-align: center;
+        margin: 300px auto;
+        h1, h2 {
+            width: 110vh;
+            margin: 20px auto;
+            color: var(--cor-primaria);
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        button {
+            padding: 14px 28px;
+            border: none;
+            background-color: var(--cor-primaria);
+            color: var(--cor-quartenaria);
+            cursor: pointer;
+            margin: 10px auto;
+            font-size: 20px;
+            transition: padding 0.3s ease;
+        }
+        button:hover {
+            padding: 14px 50px;
+        }
+    }
+}
+
+/* Estilos para todas as divs das sections pares (fundo branco) */
+.divSPar {
+    background-color: var(--cor-primaria);
+    color: var(--cor-quartenaria);
+}
+
+/* Estilos para o trecho da Section 2 */
+#divSection2 {
+    display: flex;
+    padding: 60px 20px;
+    margin: auto -20px;
+    align-items: center;
+    .divContent {
+        margin: auto;
+        h3 {
+            font-size: 24px;
+            font-weight: 500;
+            text-align: left;
+            margin: 20px;
+            }
+        p {
+            margin: 10px 20px;
+            font-size: 16px;
+            text-align: left;
+            color: var(--cor-terciaria);
+        }
+        strong {
+            color: var(--cor-terciaria);
+            font-weight: 900;
+        }
+    }
+}
+
+/* Estilos para o trecho da Section 3 */
+#divSection3 {
+    margin: 20px 8vw;
+    display: flex;
+    max-width: 1000px;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cor-primaria);
+    .boxDepoimento {
+        height: auto;
+        max-width: 300px;
+        margin: 20px 12px;
+        border: 1px ridge var(--cor-borda);
+        background-color: rgb(0, 0, 0, 0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        img {
+            max-width: 180px;
+            border-radius: 100%;
+            border: 2px dashed var(--cor-borda);
+            margin: 24px;
+        }
+        h3 {
+            font-weight: bold;
+            margin: 0;
+        }
+        h4 {
+            margin: 2px;
+        }
+        h3, h4 {
+            a {
+                text-decoration: none;
+                color: var(--cor-primaria);
+                cursor: pointer;
+            }
+        }
+        h4:hover, h3:hover, img:hover {
+            transition: transform 0.3s ease-in-out;
+            transform: scale(1.05);
+        }
+        p {
+            margin: 0 20px 24px;
+            font-weight: 300;
+            font-size: 8px;
+        }
+    }
+    .boxDepoimento:hover {
+        transition: transform 0.3s ease-in-out;
+        transform: scale(1.05);
+    }
+}
+
+/* Estilos para o trecho da Section 4 */
+#divSection4 {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0px -20px;
+    padding: 20px;
+    .divContainerCabecalho {
+        padding: 0;
+        h3 {
+            color: var(--cor-terciaria);
+            font-size: 24px;
+        }
+    }
+    div {
+        margin: 0 auto;
+        padding: 0;
+    }
+    div .divContainerSolucoes {
+        display: flex;
+        justify-content: space-between;
+        height: 130px;
+        max-width: 990px;
+        margin: 0;
+        padding: 0;
+        .divBoxSolucoes {
+            max-width: 300px;
+            max-height: 130px;
+            margin: 20px;
+            padding: 0 20px;
+            display: inline;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px ridge var(--cor-quartenaria);
+            h4 {
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--cor-terciaria);
+                padding: 4px 0;
+                margin: 0;
+            }
+            p {
+                font-size: 14px;
+                font-weight: lighter;
+                padding: 4px 0;
+                margin: 0;
+            }
+        }
+        .divBoxSolucoes:hover {
+            transition: transform 0.3s ease-in-out;
+            transform: scale(1.05);
+        }
+    }
+}
+
+/* Estilos para o trecho da Section 5 */
+#divSection5 {
+    margin: 20px auto;
+    .divContainerCabecalho {
+        margin: 20px;
+        padding: 0;
+        color: var(--cor-primaria);
+        h3 {
+            font-size: 24px;
+        }
+    }
+    /* Estilos do formulário de contato */
+    #divForm {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid var(--cor-borda);
+        color: var(--cor-primaria);
+        border: 1px ridge var(--cor-borda);
+        background-color: rgb(0, 0, 0, 0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        #divFormEsq, #divFormDir {
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+            margin: 0 auto;
+        }
+        #divFormEsq {
+            margin-right: 2%;
+        } 
+        #divFormDir {
+            margin-left: 2%;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            label {
+                margin-top: 12px;
+                font-weight: 500;
+            }
+            input, select, textarea {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            input:hover, select:hover, textarea:hover {
+                font-weight: bold;
+                transition: transform 0.3s ease-in-out;
+                transform: scale(1.02);
+            }
+            #divFormEmbaixo {
+                width: 100%;
+                margin: 10px auto 0 auto;
+                label {
+                    display: block;
+                    margin-top: 10px;
+                }
+                textarea {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid var(--cor-primaria);
+                    border-radius: 5px;
+                    resize: none;
+                }
+                button {
+                    display: block;
+                    width: 100%;
+                    padding: 10px;
+                    margin-top: 20px;
+                    background-color: var(--cor-primaria);
+                    color: var(--cor-secundaria);
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    font-weight: bold;
+                    transition: transform 0.3s ease-in-out;
+                    transform: scale(1.02);
+                }
+            }
+        }
+    }
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        text-align: center;
+    }
+}
